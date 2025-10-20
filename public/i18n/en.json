@@ -1,0 +1,196 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "PRODUCTS": "Products",
+    "CATEGORIES": "Categories",
+    "BRANDS": "Brands",
+    "CART": "Cart",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "ACCOUNT": "Account",
+    "LANGUAGE": "Language"
+  },
+  "BANNER": {
+    "HEADLINE": "Buy with 300 EGP and Get",
+    "OFFER": "50 EGP OFF",
+    "SUB": "From Telofill"
+  },
+  "SECTIONS": {
+    "FEATURED_CATEGORIES": "Featured Categories",
+    "POPULAR_PRODUCTS": "Popular Products"
+  },
+  "PRODUCT_CARD": {
+    "CATEGORY_BADGE": "Women's Fashion",
+    "TITLE_PLACEHOLDER": "Product Title",
+    "PRICE_FORMAT": "{{price}} EGP",
+    "RATING_LABEL": "{{rating}} ★",
+    "ADD_TO_CART": "Add to Cart",
+    "VIEW_DETAILS": "View Details"
+  },
+  "PRODUCTS": {
+    "TITLE": "Products",
+    "SEARCH": "Search for a product...",
+    "ADD_TO_CART": "Add to Cart",
+    "ADDING": "Adding...",
+    "PRICE_LABEL": "Price:",
+    "CATEGORY_LABEL": "Category:",
+    "RATING_LABEL": "Rating:",
+    "NO_RESULTS": "No matching products found."
+  },
+  "CATEGORIES": {
+    "TITLE": "Categories",
+    "SLUG": "Slug"
+  },
+  "FOOTER": {
+    "GET_APP_TITLE": "Get The FreshCart App",
+    "GET_APP_DESC": "We will send you a link, open it on your phone to download the app.",
+    "EMAIL_PLACEHOLDER": "Email...",
+    "SHARE_APP_LINK": "Share App Link",
+    "PAYMENT_PARTNERS": "Payment Partners",
+    "COPYRIGHT": "© 2024 FreshCart e-Commerce Template. All rights reserved. Powered by Codescandy",
+    "GET_DELIVERIES": "Get deliveries with FreshCart",
+    "FOLLOW_US": "Follow us on"
+  },
+  "UI": {
+    "LOADING": "Loading...",
+    "VIEW_MORE": "View more",
+    "NO_RESULTS": "No results found",
+    "SEE_ALL": "See all",
+    "POPULAR": "Popular",
+    "NEW": "New",
+    "SALE": "Sale"
+  },
+  "HOME_PAGE": {
+    "MAIN_BANNER": {
+      "ALT_1": "Main banner image 1",
+      "ALT_2": "Main banner image 2",
+      "ALT_3": "Main banner image 3",
+      "ALT_4": "Main banner image 4",
+      "ALT_5": "Main banner image 5",
+      "ALT_6": "Main banner image 6"
+    },
+    "SIDE_BANNERS": {
+      "ALT_1": "Side banner image 1",
+      "ALT_2": "Side banner image 2"
+    },
+    "CATEGORIES_SECTION": {
+      "TITLE": "Featured Categories"
+    },
+    "POPULAR_PRODUCTS_SECTION": {
+      "TITLE": "Popular Products"
+    }
+  },
+  
+  "BRANDS": {
+    "TITLE": "Our Brands",
+    "MODAL_TITLE": "Brand Details",
+    "NAME_LABEL": "Brand Name:",
+    "SLUG_LABEL": "Slug:",
+    "CLOSE": "Close"
+  },
+  "PRODUCT_DETAILS": {
+  "TITLE": "Product Details",
+  "IMAGE_ALT": "Product Image",
+  "CURRENCY": "EGP",
+  "ADD_TO_CART": "Add to Cart"
+},
+"CART": {
+  "TITLE": "Your Cart",
+  "TOTAL_PRICE": "Total Price",
+  "CLEAR_CART": "Clear Cart",
+  "CLEARING": "Clearing...",
+  "CHECKOUT": "Checkout",
+  "REDIRECTING": "Redirecting...",
+  "PRICE": "Price",
+  "REMOVE": "Remove",
+  "REMOVING": "Removing...",
+  "PRODUCT_IMAGE_ALT": "Product Image",
+  "EMPTY": "Your cart is empty."
+},
+"checkout": {
+  "title": "Checkout",
+  "addressLabel": "Address Details",
+  "addressPlaceholder": "Street, building, apartment...",
+  "addressRequired": "Address is required",
+  "addressMinLength": "Address must be at least 10 characters",
+  "phoneLabel": "Phone Number",
+  "phonePlaceholder": "+20 1044377059",
+  "phoneRequired": "Phone number is required",
+  "phonePattern": "Invalid Egyptian phone number (e.g. 01012345678)",
+  "cityLabel": "City",
+  "cityPlaceholder": "Enter your city",
+  "cityRequired": "City is required",
+  "cityMinLength": "City name is too short",
+  "processing": "Processing...",
+  "confirmOrder": "Confirm Order"
+},"LOGIN": {
+  "TITLE": "Login Now",
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Invalid email format",
+  "PASSWORD_LABEL": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter your password",
+  "PASSWORD_REQUIRED": "Password is required",
+  "PASSWORD_PATTERN": "Must start with a capital letter and be at least 8 characters",
+  "BUTTON": "Login",
+  "NO_ACCOUNT": "Don't have an account?",
+  "SIGNUP_LINK": "Sign up here",
+  "FORGOT_PASSWORD": "Forgot Password?"
+}
+,
+"REGISTER": {
+  "TITLE": "Create Account",
+  "NAME_LABEL": "Full Name",
+  "NAME_PLACEHOLDER": "Enter your name",
+  "NAME_REQUIRED": "Name is required",
+  "NAME_MIN": "Name must be at least 3 characters",
+  "NAME_MAX": "Name cannot exceed 20 characters",
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Invalid email format",
+  "PASSWORD_LABEL": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter your password",
+  "PASSWORD_REQUIRED": "Password is required",
+  "PASSWORD_PATTERN": "Must start with a capital letter and be at least 8 characters",
+  "CONFIRM_LABEL": "Confirm Password",
+  "CONFIRM_PLACEHOLDER": "Re-enter your password",
+  "CONFIRM_REQUIRED": "Please confirm your password",
+  "CONFIRM_MISMATCH": "Passwords do not match",
+  "PHONE_LABEL": "Phone",
+  "PHONE_PLACEHOLDER": "Enter your phone number",
+  "PHONE_REQUIRED": "Phone number is required",
+  "PHONE_INVALID": "Invalid Egyptian phone number (e.g. 01012345678)",
+  "BUTTON": "Register",
+  "HAVE_ACCOUNT": "Already have an account?",
+  "LOGIN_LINK": "Login here"
+}
+,"RESET_PASSWORD": {
+  "TITLE": "Reset Password",
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "SEND_CODE": "Send Verification Code",
+  "SENDING": "Sending...",
+  "VERIFY_CODE": "Verification Code",
+  "CODE_PLACEHOLDER": "6-digit code",
+  "VERIFYING": "Verifying...",
+  "VERIFY_BTN": "Verify Code",
+  "NEW_PASSWORD_LABEL": "New Password",
+  "NEW_PASSWORD_PLACEHOLDER": "Enter new password",
+  "RESET_BTN": "Reset Password",
+  "RESETTING": "Resetting...",
+  "ERROR_REQUIRED_EMAIL": "Email is required",
+  "ERROR_INVALID_EMAIL": "Invalid email format",
+  "ERROR_REQUIRED_CODE": "Verification code is required",
+  "ERROR_INVALID_CODE": "Code must be exactly 6 digits",
+  "ERROR_REQUIRED_PASSWORD": "Password is required",
+  "ERROR_INVALID_PASSWORD": "Password must start with a capital letter and be at least 8 characters",
+  "SUCCESS_MSG": "Your password has been reset successfully!",
+  "ERROR_MSG": "Something went wrong, please try again."
+}
+
+
+
+
+}

@@ -1,0 +1,87 @@
+@if (productDetails) {
+<section class="py-10 px-4 sm:px-6 lg:px-10">
+  <div class="container mx-auto">
+    <!-- العنوان -->
+    <div class="mb-10 text-center md:text-left">
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-700 relative inline-block pb-3 border-b-4 border-green-500"
+      >
+        {{ 'PRODUCT_DETAILS.TITLE' | translate }}
+      </h2>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center"
+    >
+      <!-- الصور -->
+      <div>
+        <owl-carousel-o [options]="customDetailsSlider">
+          @for (item of productDetails.images; track $index) {
+            <ng-template carouselSlide>
+              <img
+                [src]="item"
+                alt="{{ 'PRODUCT_DETAILS.IMAGE_ALT' | translate }}"
+                class="w-full h-64 sm:h-80 md:h-96 object-contain rounded-xl shadow-sm bg-white"
+              />
+            </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+
+      <!-- التفاصيل -->
+      <div class="space-y-4 md:space-y-6">
+        <!-- الاسم -->
+        <h2
+          class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 text-center md:text-left"
+        >
+          {{ productDetails.title | titlecase }}
+        </h2>
+
+        <!-- الوصف -->
+        <p
+          class="text-gray-600 leading-relaxed text-sm sm:text-base text-center md:text-left"
+        >
+          {{ productDetails.description | lowercase }}
+        </p>
+
+        <!-- السعر والتقييم -->
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 sm:mt-6 gap-3 sm:gap-0 text-center sm:text-left"
+        >
+          <span class="text-xl sm:text-2xl font-bold text-green-600">
+            {{ productDetails.price }}
+            {{ 'PRODUCT_DETAILS.CURRENCY' | translate }}
+          </span>
+
+          <div
+            class="flex justify-center sm:justify-start items-center gap-1 text-yellow-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              class="w-5 h-5 sm:w-6 sm:h-6"
+            >
+              <path
+                d="M12 .587l3.668 7.57L24 9.748l-6 5.847 1.416 8.268L12 19.771l-7.416 4.092L6 15.595 0 9.748l8.332-1.591z"
+              />
+            </svg>
+            <span class="text-sm sm:text-lg font-semibold">
+              {{ productDetails.ratingsAverage }}
+            </span>
+          </div>
+        </div>
+
+        <!-- الزر -->
+        <button
+          class="w-full mt-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-lg flex justify-center items-center gap-2 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+          (click)="addToCart(productDetails._id)"
+        >
+          <i class="fas fa-cart-plus"></i>
+          {{ 'PRODUCT_DETAILS.ADD_TO_CART' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+}

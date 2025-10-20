@@ -1,0 +1,176 @@
+<section class="mb-10">
+  <div class="grid grid-cols-1 md:grid-cols-[75%_minmax(0,1fr)] gap-4">
+    <!-- Main Slider -->
+    <div>
+      <owl-carousel-o [options]="customMainSlider">
+        <ng-template carouselSlide>
+          <img
+            src="/images/img1.avif"
+            class="w-full h-[200px] md:h-[300px]  md:object-fill "
+            alt="{{ 'HOME_PAGE.MAIN_BANNER.ALT_1' | translate }}"
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img2.avif"
+            class="w-full h-[200px] md:h-[300px]  md:object-fill "
+            alt="{{ 'HOME_PAGE.MAIN_BANNER.ALT_2' | translate }}"
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img3.avif"
+            class="w-full h-[200px] md:h-[300px]  md:object-fill "
+            alt="{{ 'HOME_PAGE.MAIN_BANNER.ALT_3' | translate }}"
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img4.avif"
+            class="w-full h-[200px] md:h-[300px]  md:object-fill "
+            alt="{{ 'HOME_PAGE.MAIN_BANNER.ALT_4' | translate }}"
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img5.avif"
+            class="w-full h-[200px] md:h-[300px]  md:object-fill "
+            alt="{{ 'HOME_PAGE.MAIN_BANNER.ALT_5' | translate }}"
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img
+            src="/images/img6.avif"
+            class="w-full h-[200px] md:h-[300px]  md:object-fill "
+            alt="{{ 'HOME_PAGE.MAIN_BANNER.ALT_6' | translate }}"
+          />
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <!-- Side Banners -->
+    <div>
+      <img
+        src="/images/grocery-banner.png"
+        class="hidden md:block w-full h-[150px]"
+        alt="{{ 'HOME_PAGE.SIDE_BANNERS.ALT_1' | translate }}"
+      />
+      <img
+        src="/images/grocery-banner-2.jpeg"
+        class="hidden md:block w-full h-[150px]"
+        alt="{{ 'HOME_PAGE.SIDE_BANNERS.ALT_2' | translate }}"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="mb-10">
+  <div class="mb-14">
+    <h2
+      class="text-5xl font-extrabold text-gray-700 relative inline-block pb-4"
+    >
+      {{ "HOME_PAGE.CATEGORIES_SECTION.TITLE" | translate }}
+    </h2>
+  </div>
+
+  <owl-carousel-o [options]="customOptions">
+    @for (cat of categories(); track cat._id) {
+    <ng-template carouselSlide [id]="cat._id">
+      <div>
+        <img [src]="cat.image" class="w-full h-[200px]  md:h-[250px]  " [alt]="cat.name" />
+        <h3 class="text-center font-semibold mt-2">{{ cat.name }}</h3>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</section>
+
+<!-- Popular Products Section -->
+<section
+  class="relative py-20 bg-gradient-to-b from-white via-gray-50 to-green-50 overflow-hidden"
+>
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute top-20 left-40 w-96 h-96 bg-green-200/40 rounded-full blur-3xl animate-pulse"
+    ></div>
+    <div
+      class="absolute bottom-0 right-20 w-[500px] h-[500px] bg-green-100/40 rounded-full blur-3xl animate-pulse"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-6">
+    <!-- Title -->
+    <div class="mb-10">
+      <h2
+        class="text-5xl font-extrabold text-gray-700 relative inline-block pb-4"
+      >
+        {{ "HOME_PAGE.POPULAR_PRODUCTS_SECTION.TITLE" | translate }}
+      </h2>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+      @for (product of products().slice(0, 12); track $index) {
+      <div
+        class="cursor-pointer relative group rounded-3xl bg-white border border-green-100 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+        [routerLink]="['/details', product._id]"
+      >
+        <div
+          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-t from-green-50 via-transparent to-transparent"
+        ></div>
+
+        <span
+          class="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md shadow-md z-20"
+        >
+          {{ product.category.name }}
+        </span>
+
+        <div class="relative bg-white p-5 flex justify-center items-center">
+          <img
+            [src]="product.imageCover"
+            [alt]="product.title"
+            class="w-full h-[250px] object-contain transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1"
+          />
+          <div
+            class="absolute inset-0 bg-green-100/20 opacity-0 group-hover:opacity-100 blur-2xl transition duration-700"
+          ></div>
+        </div>
+
+        <div class="p-6 space-y-4 relative z-10">
+          <h3
+            class="font-bold text-gray-800 text-lg leading-snug group-hover:text-green-600 transition-colors duration-500 line-clamp-2"
+          >
+            {{ product.title.split(" ", 2).join(" ") }}
+          </h3>
+
+          <div class="flex justify-between items-center">
+            <span class="font-extrabold text-green-600 text-lg">
+              {{
+                "PRODUCT_CARD.PRICE_FORMAT"
+                  | translate : { price: product.price }
+              }}
+            </span>
+            <div class="flex items-center space-x-1">
+              <i class="fas fa-star text-yellow-400"></i>
+              <span class="text-gray-500 text-sm font-medium">
+                {{
+                  "PRODUCT_CARD.RATING_LABEL"
+                    | translate : { rating: product.ratingsAverage }
+                }}
+              </span>
+            </div>
+          </div>
+
+          <button
+            (click)="addProductToCart(product._id); $event.stopPropagation()"
+            class="w-full mt-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-lg flex justify-center items-center gap-2 transition-all duration-500 group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"
+          >
+            <i class="fas fa-cart-plus"></i>
+            <span>{{ "PRODUCT_CARD.ADD_TO_CART" | translate }}</span>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

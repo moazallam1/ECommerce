@@ -1,0 +1,100 @@
+<section
+  class="relative px-6 py-10 bg-gradient-to-b from-white via-gray-50 to-green-50 overflow-hidden"
+>
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute top-20 left-1/3 w-[400px] h-[400px] bg-green-200/30 rounded-full blur-3xl animate-pulse"
+    ></div>
+    <div
+      class="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-green-100/40 rounded-full blur-2xl animate-pulse"
+    ></div>
+  </div>
+
+  <div class="mb-2">
+    <h2
+      class="text-5xl font-extrabold text-gray-700 relative inline-block pb-4"
+    >
+      {{ "PRODUCTS.TITLE" | translate }}
+    </h2>
+  </div>
+
+  @if (products()) {
+  <!-- Search Input -->
+  <div class="mb-14 flex">
+    <div class="relative w-full max-w-md">
+      <input
+        [(ngModel)]="searchWord"
+        type="text"
+        [placeholder]="'PRODUCTS.SEARCH' | translate"
+        class="w-full py-3 pl-12 pr-4 rounded-2xl border border-green-200 focus:ring-2 focus:ring-green-400 focus:outline-none shadow-sm"
+      />
+      <i
+        class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-green-500"
+      ></i>
+    </div>
+  </div>
+  }
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (product of products() | search:searchWord(); track $index) {
+    <div
+      class="cursor-pointer relative bg-white border border-green-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group"
+      [routerLink]="['/details', product._id]"
+      routerLinkActive="bg-green-600 active"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-green-100/10 via-transparent to-green-50/10 opacity-0 group-hover:opacity-100 blur-2xl transition duration-700"
+      ></div>
+
+      <span
+        class="absolute top-3 left-3 z-20 bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md shadow-sm"
+      >
+        {{ product.category.name }}
+      </span>
+
+      <div
+        class="relative bg-white p-5 flex justify-center items-center overflow-hidden z-10"
+      >
+        <img
+          [src]="product.imageCover"
+          [alt]="product.title"
+          class="w-full h-[220px] object-contain transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700"
+        ></div>
+      </div>
+
+      <div class="px-5 py-5 relative z-20">
+        <h3
+          class="font-semibold text-gray-800 text-lg mb-2 leading-tight line-clamp-2 group-hover:text-green-600 transition-colors duration-500"
+        >
+          {{ product.title | termtext : 2 | titlecase }}
+        </h3>
+
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-bold text-green-600 text-lg">
+            {{
+              "PRODUCT_CARD.PRICE_FORMAT" | translate : { price: product.price }
+            }}
+          </span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-gray-500 text-sm">{{
+              product.ratingsAverage
+            }}</span>
+          </div>
+        </div>
+
+        <button
+          (click)="addProductToCart(product._id); $event.stopPropagation()"
+          class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-xl flex justify-center items-center gap-2 transition-all duration-500 group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"
+        >
+          <i class="fas fa-cart-plus"></i>
+          <span>{{ "PRODUCTS.ADD_TO_CART" | translate }}</span>
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>

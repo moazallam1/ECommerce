@@ -1,0 +1,159 @@
+<footer class="w-full bg-gray-100 py-10">
+  <div class="max-w-screen-2xl mx-auto px-5">
+    <!-- العنوان والوصف -->
+    <h2 class="text-xl font-semibold mb-1">
+      {{ 'FOOTER.GET_APP_TITLE' | translate }}
+    </h2>
+    <p class="text-gray-500 text-sm mb-6">
+      {{ 'FOOTER.GET_APP_DESC' | translate }}
+    </p>
+
+    <!-- Input + Button -->
+    <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-6">
+      <div class="sm:col-span-4">
+        <input
+          type="email"
+          [placeholder]="'FOOTER.EMAIL_PLACEHOLDER' | translate"
+          class="w-full border border-gray-300 rounded-md px-4 py-2 
+                 focus:outline-none focus:ring-2 focus:ring-green-400 
+                 text-sm shadow-sm"
+        />
+      </div>
+      <div class="sm:col-span-1">
+        <button
+          class="w-full bg-green-600 text-white px-6 py-2 rounded-md 
+                 text-sm font-medium shadow hover:bg-green-700 
+                 transition-all duration-200"
+        >
+          {{ 'FOOTER.SHARE_APP_LINK' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <hr class="my-6 border-gray-300" />
+
+    <!-- شركاء الدفع + روابط التحميل -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6"
+    >
+      <!-- Payment Partners -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <h3 class="text-sm font-medium">
+          {{ 'FOOTER.PAYMENT_PARTNERS' | translate }}
+        </h3>
+        <img
+          src="/images/amazon-pay.png"
+          class="h-6 object-contain"
+          alt="amazon pay"
+        />
+        <img
+          src="/images/American-Express-Color.png"
+          class="h-6 object-contain"
+          alt="amex"
+        />
+        <img
+          src="/images/mastercard.webp"
+          class="h-6 object-contain"
+          alt="mastercard"
+        />
+        <img
+          src="/images/paypal.png"
+          class="h-6 object-contain"
+          alt="paypal"
+          class="w-16 h-10"
+        />
+        <img
+          src="/images/visa.png"
+          class="h-6 object-contain"
+          alt="visa"
+        />
+      </div>
+
+      <!-- App Store Links -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <h3 class="text-sm font-medium">
+          {{ 'FOOTER.GET_DELIVERIES' | translate }}
+        </h3>
+        <img
+          src="/images/get-google-play.png"
+          class="w-[60px] cursor-pointer transition"
+          alt="google play"
+        />
+        <img
+          src="/images/get-apple-store.png"
+          class="w-[60px] cursor-pointer transition"
+          alt="apple store"
+        />
+      </div>
+    </div>
+
+    <hr class="my-6 border-gray-300" />
+
+    <!-- Copyright + Social -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-4"
+    >
+      <p class="text-center md:text-left">
+        
+        <!-- <span class="text-black font-medium">FreshCart e-Commerce HTML Template</span>. -->
+        {{ 'FOOTER.COPYRIGHT' | translate }}
+        <!-- <span class="text-green-600 font-medium">Codescandy</span> -->
+      </p>
+
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:block">
+          {{ 'FOOTER.FOLLOW_US' | translate }}
+        </span>
+
+        <!-- Social Icons -->
+        <a
+          href="#"
+          class="p-2 rounded-md border border-gray-300 hover:bg-gray-200 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+          >
+            <path
+              d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.3 3h-1.9v7A10 10 0 0 0 22 12z"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="#"
+          class="p-2 rounded-md border border-gray-300 hover:bg-gray-200 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+          >
+            <path
+              d="M19.6 7.5c.8-.5 1.3-1.1 1.6-2-.7.4-1.4.6-2.2.8A3.6 3.6 0 0 0 12 9.2v.8c-3-.2-5.7-1.6-7.5-3.9-.3.5-.5 1.1-.5 1.7 0 1.2.6 2.3 1.6 3-.6 0-1.1-.2-1.6-.4v.1c0 1.7 1.3 3.2 2.9 3.5-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.4 1.8 2.4 3.4 2.4A7.2 7.2 0 0 1 5 18.6a10.2 10.2 0 0 0 5.5 1.6c6.6 0 10.2-5.5 10.2-10.2v-.5c.7-.5 1.3-1.1 1.9-1.8-.6.3-1.2.5-1.9.6z"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="#"
+          class="p-2 rounded-md border border-gray-300 hover:bg-gray-200 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            class="w-5 h-5"
+          >
+            <path
+              d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.5 5.5 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm4.8-3.8a1.3 1.3 0 1 0 1.3 1.3 1.3 1.3 0 0 0-1.3-1.3z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,197 @@
+{
+  "NAVBAR": {
+    "HOME": "الرئيسية",
+    "PRODUCTS": "المنتجات",
+    "CATEGORIES": "الفئات",
+    "BRANDS": "الماركات",
+    "CART": "عربة التسوق",
+    "LOGIN": "تسجيل الدخول",
+    "REGISTER": "إنشاء حساب",
+    "ACCOUNT": "الحساب",
+    "LANGUAGE": "اللغة"
+  },
+  "BANNER": {
+    "HEADLINE": "اشترِ بـ 300 جنيه واحصل على",
+    "OFFER": "خصم 50 جنيه",
+    "SUB": "من Telofill"
+  },
+  "SECTIONS": {
+    "FEATURED_CATEGORIES": "الفئات المميزة",
+    "POPULAR_PRODUCTS": "المنتجات الشائعة"
+  },
+  "PRODUCT_CARD": {
+    "CATEGORY_BADGE": "أزياء نسائية",
+    "TITLE_PLACEHOLDER": "اسم المنتج",
+    "PRICE_FORMAT": "{{price}} جنيه",
+    "RATING_LABEL": "{{rating}} ★",
+    "ADD_TO_CART": "أضف إلى السلة",
+    "VIEW_DETAILS": "عرض التفاصيل"
+  },
+  "PRODUCTS": {
+    "TITLE": "المنتجات",
+    "SEARCH": "ابحث عن منتج...",
+    "ADD_TO_CART": "أضف إلى السلة",
+    "ADDING": "جاري الإضافة...",
+    "PRICE_LABEL": "السعر:",
+    "CATEGORY_LABEL": "الفئة:",
+    "RATING_LABEL": "التقييم:",
+    "NO_RESULTS": "لا توجد منتجات مطابقة لبحثك."
+  },
+  "CATEGORIES": {
+    "TITLE": "الفئات",
+    "SLUG": "المعرف "
+  },
+"FOOTER": {
+  "GET_APP_TITLE": "احصل على تطبيق FreshCart",
+  "GET_APP_DESC": "سَنُرسِل لك رابطًا، افتحه على هاتفك لتحميل التطبيق.",
+  "EMAIL_PLACEHOLDER": "البريد الإلكتروني...",
+  "SHARE_APP_LINK": "مشاركة رابط التطبيق",
+  "PAYMENT_PARTNERS": "شركاء الدفع",
+  "GET_DELIVERIES": "احصل على طلباتك بسرعة مع FreshCart",
+  "FOLLOW_US": "تابعنا على",
+  "COPYRIGHT": "©  قالب FreshCart للتجارة الإلكترونية. جميع الحقوق محفوظة. تم التطوير بواسطة Codescandy"
+}
+
+,
+  "UI": {
+    "LOADING": "جاري التحميل...",
+    "VIEW_MORE": "عرض المزيد",
+    "NO_RESULTS": "لا توجد نتائج",
+    "SEE_ALL": "عرض الكل",
+    "POPULAR": "شائع",
+    "NEW": "جديد",
+    "SALE": "تخفيض"
+  },
+  "HOME_PAGE": {
+    "MAIN_BANNER": {
+      "ALT_1": "صورة الشريط الرئيسي 1",
+      "ALT_2": "صورة الشريط الرئيسي 2",
+      "ALT_3": "صورة الشريط الرئيسي 3",
+      "ALT_4": "صورة الشريط الرئيسي 4",
+      "ALT_5": "صورة الشريط الرئيسي 5",
+      "ALT_6": "صورة الشريط الرئيسي 6"
+    },
+    "SIDE_BANNERS": {
+      "ALT_1": "صورة إعلان جانبي 1",
+      "ALT_2": "صورة إعلان جانبي 2"
+    },
+    "CATEGORIES_SECTION": {
+      "TITLE": "الفئات المميزة"
+    },
+    "POPULAR_PRODUCTS_SECTION": {
+      "TITLE": "المنتجات الشائعة"
+    }
+  },
+   "BRANDS": {
+    "TITLE": "علاماتنا التجارية",
+    "MODAL_TITLE": "تفاصيل العلامة التجارية",
+    "NAME_LABEL": "اسم العلامة:",
+    "SLUG_LABEL": "الرمز التعريفي:",
+    "CLOSE": "إغلاق"
+  },
+  "PRODUCT_DETAILS": {
+  "TITLE": "تفاصيل المنتج",
+  "IMAGE_ALT": "صورة المنتج",
+  "CURRENCY": "جنيه",
+  "ADD_TO_CART": "أضف إلى السلة"
+},
+"CART": {
+  "TITLE": "سلة التسوق",
+  "TOTAL_PRICE": "إجمالي السعر",
+  "CLEAR_CART": "مسح السلة",
+  "CLEARING": "جارٍ المسح...",
+  "CHECKOUT": "إتمام الشراء",
+  "REDIRECTING": "جارٍ التحويل...",
+  "PRICE": "السعر",
+  "REMOVE": "إزالة",
+  "REMOVING": "جارٍ الإزالة...",
+  "PRODUCT_IMAGE_ALT": "صورة المنتج",
+  "EMPTY": "سلة التسوق فارغة."
+},
+"checkout": {
+  "title": "إتمام الطلب",
+  "addressLabel": "تفاصيل العنوان",
+  "addressPlaceholder": "الشارع، المبنى، الشقة...",
+  "addressRequired": "العنوان مطلوب",
+  "addressMinLength": "العنوان يجب أن يحتوي على 10 أحرف على الأقل",
+  "phoneLabel": "رقم الهاتف",
+  "phonePlaceholder": "+20 1044377059",
+  "phoneRequired": "رقم الهاتف مطلوب",
+  "phonePattern": "رقم الهاتف غير صالح (مثال: 01012345678)",
+  "cityLabel": "المدينة",
+  "cityPlaceholder": "أدخل مدينتك",
+  "cityRequired": "اسم المدينة مطلوب",
+  "cityMinLength": "اسم المدينة قصير جدًا",
+  "processing": "جاري المعالجة...",
+  "confirmOrder": "تأكيد الطلب"
+},"LOGIN": {
+  "TITLE": "تسجيل الدخول الآن",
+  "EMAIL_LABEL": "البريد الإلكتروني",
+  "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+  "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+  "EMAIL_INVALID": "تنسيق البريد الإلكتروني غير صالح",
+  "PASSWORD_LABEL": "كلمة المرور",
+  "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور",
+  "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+  "PASSWORD_PATTERN": "يجب أن تبدأ بحرف كبير وتكون 8 أحرف على الأقل",
+  "BUTTON": "تسجيل الدخول",
+  "NO_ACCOUNT": "ليس لديك حساب؟",
+  "SIGNUP_LINK": "سجل من هنا",
+  "FORGOT_PASSWORD": "نسيت كلمة المرور؟"
+}
+,
+"REGISTER": {
+  "TITLE": "إنشاء حساب جديد",
+  "NAME_LABEL": "الاسم الكامل",
+  "NAME_PLACEHOLDER": "أدخل اسمك",
+  "NAME_REQUIRED": "الاسم مطلوب",
+  "NAME_MIN": "يجب ألا يقل الاسم عن 3 أحرف",
+  "NAME_MAX": "يجب ألا يزيد الاسم عن 20 حرفًا",
+  "EMAIL_LABEL": "البريد الإلكتروني",
+  "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+  "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+  "EMAIL_INVALID": "تنسيق البريد الإلكتروني غير صالح",
+  "PASSWORD_LABEL": "كلمة المرور",
+  "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور",
+  "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+  "PASSWORD_PATTERN": "يجب أن تبدأ بحرف كبير وتكون 8 أحرف على الأقل",
+  "CONFIRM_LABEL": "تأكيد كلمة المرور",
+  "CONFIRM_PLACEHOLDER": "أعد إدخال كلمة المرور",
+  "CONFIRM_REQUIRED": "يرجى تأكيد كلمة المرور",
+  "CONFIRM_MISMATCH": "كلمتا المرور غير متطابقتين",
+  "PHONE_LABEL": "رقم الهاتف",
+  "PHONE_PLACEHOLDER": "أدخل رقم هاتفك",
+  "PHONE_REQUIRED": "رقم الهاتف مطلوب",
+  "PHONE_INVALID": "رقم الهاتف غير صالح (مثال: 01012345678)",
+  "BUTTON": "تسجيل",
+  "HAVE_ACCOUNT": "هل لديك حساب بالفعل؟",
+  "LOGIN_LINK": "سجّل الدخول هنا"
+}
+,"RESET_PASSWORD": {
+  "TITLE": "إعادة تعيين كلمة المرور",
+  "EMAIL_LABEL": "البريد الإلكتروني",
+  "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني",
+  "SEND_CODE": "إرسال رمز التحقق",
+  "SENDING": "جاري الإرسال...",
+  "VERIFY_CODE": "رمز التحقق",
+  "CODE_PLACEHOLDER": "الرمز المكون من 6 أرقام",
+  "VERIFYING": "جاري التحقق...",
+  "VERIFY_BTN": "تحقق من الرمز",
+  "NEW_PASSWORD_LABEL": "كلمة المرور الجديدة",
+  "NEW_PASSWORD_PLACEHOLDER": "أدخل كلمة المرور الجديدة",
+  "RESET_BTN": "إعادة التعيين",
+  "RESETTING": "جاري إعادة التعيين...",
+  "ERROR_REQUIRED_EMAIL": "البريد الإلكتروني مطلوب",
+  "ERROR_INVALID_EMAIL": "صيغة البريد الإلكتروني غير صحيحة",
+  "ERROR_REQUIRED_CODE": "رمز التحقق مطلوب",
+  "ERROR_INVALID_CODE": "يجب أن يتكون الرمز من 6 أرقام بالضبط",
+  "ERROR_REQUIRED_PASSWORD": "كلمة المرور مطلوبة",
+  "ERROR_INVALID_PASSWORD": "يجب أن تبدأ كلمة المرور بحرف كبير ولا تقل عن 8 أحرف",
+  "SUCCESS_MSG": "تمت إعادة تعيين كلمة المرور بنجاح!",
+  "ERROR_MSG": "حدث خطأ، يرجى المحاولة مرة أخرى."
+}
+
+
+
+
+}
