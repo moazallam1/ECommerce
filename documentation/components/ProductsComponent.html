@@ -1,0 +1,865 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>e-commerce documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">e-commerce documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProductsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Pages/products/products.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-products</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterLink</code>
+                            <code>RouterLinkActive</code>
+                            <code>TitleCasePipe</code>
+                            <code>TermtextPipe</code>
+                            <code>FormsModule</code>
+                            <code>SearchPipe</code>
+                            <code>TranslateModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./products.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./products.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#cartService" >cartService</a>
+                            </li>
+                            <li>
+                                <a href="#products" >products</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#productsService" >productsService</a>
+                            </li>
+                            <li>
+                                <a href="#searchWord" >searchWord</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#toastService" >toastService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addProductToCart" >addProductToCart</a>
+                            </li>
+                            <li>
+                                <a href="#getProductsData" >getProductsData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProductToCart"></a>
+                    <span class="name">
+                        <span ><b>addProductToCart</b></span>
+                        <a href="#addProductToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addProductToCart(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/app/Pages/products/products.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsData"></a>
+                    <span class="name">
+                        <span ><b>getProductsData</b></span>
+                        <a href="#getProductsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/Pages/products/products.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/Pages/products/products.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>cartService</b></span>
+                        <a href="#cartService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CartService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Pages/products/products.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="products"></a>
+                    <span class="name">
+                        <span ><b>products</b></span>
+                        <a href="#products"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;IProduct[]&gt;([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Pages/products/products.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productsService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>productsService</b></span>
+                        <a href="#productsService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ProductsService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Pages/products/products.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchWord"></a>
+                    <span class="name">
+                        <span ><b>searchWord</b></span>
+                        <a href="#searchWord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Pages/products/products.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>toastService</b></span>
+                        <a href="#toastService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastrService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Pages/products/products.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CurrencyPipe, TitleCasePipe } from &#x27;@angular/common&#x27;;
+import { ChangeDetectorRef, Component, inject, OnInit, signal } from &#x27;@angular/core&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { RouterLink, RouterLinkActive } from &#x27;@angular/router&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { CartService } from &#x27;../../Core/Services/Cart/cart.service&#x27;;
+import { ProductsService } from &#x27;../../Core/Services/Products/products.service&#x27;;
+import { IProduct } from &#x27;../../Shared/Interfaces/iproduct&#x27;;
+import { SearchPipe } from &#x27;../../Shared/Pipes/search.pipe&#x27;;
+import { TermtextPipe } from &#x27;../../Shared/Pipes/termtext.pipe&#x27;;
+
+@Component({
+  selector: &#x27;app-products&#x27;,
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    TitleCasePipe,
+    TermtextPipe,
+    FormsModule,
+    SearchPipe,
+    TranslateModule
+  ],
+  templateUrl: &#x27;./products.component.html&#x27;,
+  styleUrl: &#x27;./products.component.scss&#x27;
+})
+export class ProductsComponent implements OnInit {
+  private readonly productsService &#x3D; inject(ProductsService);
+  private readonly cartService &#x3D; inject(CartService);
+  private readonly toastService &#x3D; inject(ToastrService);
+
+  products &#x3D; signal&lt;IProduct[]&gt;([])
+  searchWord &#x3D; signal(&#x27;&#x27;)
+
+
+
+  getProductsData() {
+    this.productsService.getAllProducts().subscribe({
+      next: (res) &#x3D;&gt; {
+        this.products.set(res.data);
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(err);
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.getProductsData();
+  }
+
+  addProductToCart(id: string) {
+
+    this.cartService.addProductToCart(id).subscribe({
+      next: (res) &#x3D;&gt; {
+        console.log(res);
+        if (res.status &#x3D;&#x3D;&#x3D; &#x27;success&#x27;) {
+          this.toastService.success(res.message);
+          this.cartService.cartNumber.set(res.numOfCartItems)
+
+        }else{
+          this.toastService.error(res.message);
+        }
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(err);
+      }
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section
+  class&#x3D;&quot;relative px-6 py-10 bg-gradient-to-b from-white via-gray-50 to-green-50 overflow-hidden&quot;
+&gt;
+  &lt;div class&#x3D;&quot;absolute inset-0 -z-10&quot;&gt;
+    &lt;div
+      class&#x3D;&quot;absolute top-20 left-1/3 w-[400px] h-[400px] bg-green-200/30 rounded-full blur-3xl animate-pulse&quot;
+    &gt;&lt;/div&gt;
+    &lt;div
+      class&#x3D;&quot;absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-green-100/40 rounded-full blur-2xl animate-pulse&quot;
+    &gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;mb-2&quot;&gt;
+    &lt;h2
+      class&#x3D;&quot;text-5xl font-extrabold text-gray-700 relative inline-block pb-4&quot;
+    &gt;
+      {{ &quot;PRODUCTS.TITLE&quot; | translate }}
+    &lt;/h2&gt;
+  &lt;/div&gt;
+
+  @if (products()) {
+  &lt;!-- Search Input --&gt;
+  &lt;div class&#x3D;&quot;mb-14 flex&quot;&gt;
+    &lt;div class&#x3D;&quot;relative w-full max-w-md&quot;&gt;
+      &lt;input
+        [(ngModel)]&#x3D;&quot;searchWord&quot;
+        type&#x3D;&quot;text&quot;
+        [placeholder]&#x3D;&quot;&#x27;PRODUCTS.SEARCH&#x27; | translate&quot;
+        class&#x3D;&quot;w-full py-3 pl-12 pr-4 rounded-2xl border border-green-200 focus:ring-2 focus:ring-green-400 focus:outline-none shadow-sm&quot;
+      /&gt;
+      &lt;i
+        class&#x3D;&quot;fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-green-500&quot;
+      &gt;&lt;/i&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  }
+
+  &lt;div class&#x3D;&quot;grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10&quot;&gt;
+    @for (product of products() | search:searchWord(); track $index) {
+    &lt;div
+      class&#x3D;&quot;cursor-pointer relative bg-white border border-green-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group&quot;
+      [routerLink]&#x3D;&quot;[&#x27;/details&#x27;, product._id]&quot;
+      routerLinkActive&#x3D;&quot;bg-green-600 active&quot;
+    &gt;
+      &lt;div
+        class&#x3D;&quot;absolute inset-0 bg-gradient-to-br from-green-100/10 via-transparent to-green-50/10 opacity-0 group-hover:opacity-100 blur-2xl transition duration-700&quot;
+      &gt;&lt;/div&gt;
+
+      &lt;span
+        class&#x3D;&quot;absolute top-3 left-3 z-20 bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md shadow-sm&quot;
+      &gt;
+        {{ product.category.name }}
+      &lt;/span&gt;
+
+      &lt;div
+        class&#x3D;&quot;relative bg-white p-5 flex justify-center items-center overflow-hidden z-10&quot;
+      &gt;
+        &lt;img
+          [src]&#x3D;&quot;product.imageCover&quot;
+          [alt]&#x3D;&quot;product.title&quot;
+          class&#x3D;&quot;w-full h-[220px] object-contain transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1&quot;
+        /&gt;
+        &lt;div
+          class&#x3D;&quot;absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700&quot;
+        &gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;px-5 py-5 relative z-20&quot;&gt;
+        &lt;h3
+          class&#x3D;&quot;font-semibold text-gray-800 text-lg mb-2 leading-tight line-clamp-2 group-hover:text-green-600 transition-colors duration-500&quot;
+        &gt;
+          {{ product.title | termtext : 2 | titlecase }}
+        &lt;/h3&gt;
+
+        &lt;div class&#x3D;&quot;flex justify-between items-center mb-4&quot;&gt;
+          &lt;span class&#x3D;&quot;font-bold text-green-600 text-lg&quot;&gt;
+            {{
+              &quot;PRODUCT_CARD.PRICE_FORMAT&quot; | translate : { price: product.price }
+            }}
+          &lt;/span&gt;
+          &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-star text-yellow-400 mr-1&quot;&gt;&lt;/i&gt;
+            &lt;span class&#x3D;&quot;text-gray-500 text-sm&quot;&gt;{{
+              product.ratingsAverage
+            }}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;button
+          (click)&#x3D;&quot;addProductToCart(product._id); $event.stopPropagation()&quot;
+          class&#x3D;&quot;w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-xl flex justify-center items-center gap-2 transition-all duration-500 group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100&quot;
+        &gt;
+          &lt;i class&#x3D;&quot;fas fa-cart-plus&quot;&gt;&lt;/i&gt;
+          &lt;span&gt;{{ &quot;PRODUCTS.ADD_TO_CART&quot; | translate }}&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    }
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section  class="relative px-6 py-10 bg-gradient-to-b from-white via-gray-50 to-green-50 overflow-hidden">  <div class="absolute inset-0 -z-10">    <div      class="absolute top-20 left-1/3 w-[400px] h-[400px] bg-green-200/30 rounded-full blur-3xl animate-pulse"    ></div>    <div      class="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-green-100/40 rounded-full blur-2xl animate-pulse"    ></div>  </div>  <div class="mb-2">    <h2      class="text-5xl font-extrabold text-gray-700 relative inline-block pb-4"    >      {{ "PRODUCTS.TITLE" | translate }}    </h2>  </div>  @if (products()) {  <!-- Search Input -->  <div class="mb-14 flex">    <div class="relative w-full max-w-md">      <input        [(ngModel)]="searchWord"        type="text"        [placeholder]="\'PRODUCTS.SEARCH\' | translate"        class="w-full py-3 pl-12 pr-4 rounded-2xl border border-green-200 focus:ring-2 focus:ring-green-400 focus:outline-none shadow-sm"      />      <i        class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-green-500"      ></i>    </div>  </div>  }  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">    @for (product of products() | search:searchWord(); track $index) {    <div      class="cursor-pointer relative bg-white border border-green-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group"      [routerLink]="[\'/details\', product._id]"      routerLinkActive="bg-green-600 active"    >      <div        class="absolute inset-0 bg-gradient-to-br from-green-100/10 via-transparent to-green-50/10 opacity-0 group-hover:opacity-100 blur-2xl transition duration-700"      ></div>      <span        class="absolute top-3 left-3 z-20 bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md shadow-sm"      >        {{ product.category.name }}      </span>      <div        class="relative bg-white p-5 flex justify-center items-center overflow-hidden z-10"      >        <img          [src]="product.imageCover"          [alt]="product.title"          class="w-full h-[220px] object-contain transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1"        />        <div          class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700"        ></div>      </div>      <div class="px-5 py-5 relative z-20">        <h3          class="font-semibold text-gray-800 text-lg mb-2 leading-tight line-clamp-2 group-hover:text-green-600 transition-colors duration-500"        >          {{ product.title | termtext : 2 | titlecase }}        </h3>        <div class="flex justify-between items-center mb-4">          <span class="font-bold text-green-600 text-lg">            {{              "PRODUCT_CARD.PRICE_FORMAT" | translate : { price: product.price }            }}          </span>          <div class="flex items-center">            <i class="fas fa-star text-yellow-400 mr-1"></i>            <span class="text-gray-500 text-sm">{{              product.ratingsAverage            }}</span>          </div>        </div>        <button          (click)="addProductToCart(product._id); $event.stopPropagation()"          class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-xl flex justify-center items-center gap-2 transition-all duration-500 group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100"        >          <i class="fas fa-cart-plus"></i>          <span>{{ "PRODUCTS.ADD_TO_CART" | translate }}</span>        </button>      </div>    </div>    }  </div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'BlankLayoutComponent', 'selector': 'app-blank-layout'},{'name': 'BrandsComponent', 'selector': 'app-brands'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoriesComponent', 'selector': 'app-categories'},{'name': 'CheckOutComponent', 'selector': 'app-check-out'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProductsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
